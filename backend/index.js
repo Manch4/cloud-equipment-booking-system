@@ -1,0 +1,9 @@
+require("./src/functions/getEquipment");
+require("./src/functions/getReservations");
+require("./src/functions/createReservation");
+require("./src/functions/cancelReservation");
+require("./src/functions/checkoutReservation");
+require("./src/functions/returnEquipment");
+require("./src/functions/reportProblem");
+require("./src/functions/getMaintenance");
+require("./src/functions/resolveMaintenance");

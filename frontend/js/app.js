@@ -195,56 +195,58 @@ async function loadMaintenance() {
                 Resolve Issue
             </button>
         `;
+
         const resolveButton =
-    maintenanceCard.querySelector(
-        ".resolve-button"
-    );
-
-resolveButton.addEventListener(
-    "click",
-    async () => {
-
-        const response =
-            await fetch(
-                "http://localhost:7071/api/resolveMaintenance",
-                {
-                    method: "POST",
-
-                    headers: {
-                        "Content-Type":
-                            "application/json"
-                    },
-
-                    body:
-                        JSON.stringify({
-                            id:
-                                record.id
-                        })
-                }
+            maintenanceCard.querySelector(
+                ".resolve-button"
             );
 
+        resolveButton.addEventListener(
+            "click",
+            async () => {
 
-        if (!response.ok) {
+                const response =
+                    await fetch(
+                        "http://localhost:7071/api/resolveMaintenance",
+                        {
+                            method: "POST",
 
-            const error =
-                await response.json();
+                            headers: {
+                                "Content-Type":
+                                    "application/json"
+                            },
 
-            alert(error.message);
-
-            return;
-        }
-
-
-        await loadEquipment();
-
-        await loadMaintenance();
+                            body:
+                                JSON.stringify({
+                                    id:
+                                        record.id
+                                })
+                        }
+                    );
 
 
-        alert(
-            "Maintenance issue resolved successfully!"
+                if (!response.ok) {
+
+                    const error =
+                        await response.json();
+
+                    alert(error.message);
+
+                    return;
+                }
+
+
+                await loadEquipment();
+
+                await loadMaintenance();
+
+
+                alert(
+                    "Maintenance issue resolved successfully!"
+                );
+            }
         );
-    }
-);
+
         maintenanceList.appendChild(
             maintenanceCard
         );

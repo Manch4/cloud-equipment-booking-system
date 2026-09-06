@@ -1,14 +1,17 @@
 {
-  "name": "",
+  "name": "cloud-equipment-booking-api",
   "version": "1.0.0",
-  "description": "",
-  "main": "src/functions/*.js",
+  "description": "Cloud-based equipment booking system API",
+  "main": "server.js",
   "scripts": {
-    "start": "func start",
+    "start": "node server.js",
     "test": "echo \"No tests yet...\""
   },
   "dependencies": {
     "@azure/cosmos": "^4.10.0",
-    "@azure/functions": "^4.0.0"
+    "@azure/functions": "^4.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.4.2",
+    "express": "^5.1.0"
   }
 }
