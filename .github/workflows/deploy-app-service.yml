@@ -1,0 +1,42 @@
+name: Build and deploy Node.js backend to Azure App Service
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "backend/**"
+      - ".github/workflows/deploy-app-service.yml"
+  workflow_dispatch:
+
+env:
+  NODE_VERSION: "24.x"
+  AZURE_WEBAPP_NAME: "cloud-equipment-booking-api-nate-erc5fpepdpf4hfe5"
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Install dependencies
+        working-directory: backend
+        run: npm install
+
+      - name: Deploy to Azure App Service
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: ${{ env.AZURE_WEBAPP_NAME }}
+          package: ./backend
+          slot-name: Production
