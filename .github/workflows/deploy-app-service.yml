@@ -30,13 +30,20 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
 
-      - name: Install dependencies
+      - name: Install backend dependencies
         working-directory: backend
         run: npm install
+
+      - name: Login to Azure
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_954AA58935174F6D8A9FEA658C79F576 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_45A3C277A7BE4D20AB972672787A2157 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_4F4BFE306D9D4CFBB5E62A217B53CC5D }}
 
       - name: Deploy to Azure App Service
         uses: azure/webapps-deploy@v3
         with:
           app-name: ${{ env.AZURE_WEBAPP_NAME }}
-          package: ./backend
           slot-name: Production
+          package: ./backend
