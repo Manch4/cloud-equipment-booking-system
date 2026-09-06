@@ -1,0 +1,95 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 40px;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+#equipment-list {
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+/* Equipment cards */
+
+.equipment-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 15px;
+    max-width: 300px;
+}
+
+.reserve-button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+
+/* Reservation form */
+
+#reservation-form {
+    display: none;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+    max-width: 500px;
+    background-color: #f8f8f8;
+}
+
+.reservation-field {
+    margin-bottom: 15px;
+}
+
+.reservation-field label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+
+.reservation-field input,
+.reservation-field select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+#submit-reservation {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+
+/* Reservation cards */
+
+.reservation-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 15px;
+    max-width: 500px;
+}
+
+.cancel-button {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}

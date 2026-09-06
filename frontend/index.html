@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipment Booking System</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Equipment Booking System</h1>
+        <p>Manage and reserve shared equipment.</p>
+    </header>
+
+    <main>
+
+        <h2>Equipment</h2>
+
+        <div id="equipment-list">
+            <p>Equipment will appear here.</p>
+        </div>
+
+
+        <div id="reservation-form" class="reservation-form">
+
+            <h2>Reserve Equipment</h2>
+
+            <p id="selected-equipment"></p>
+
+            <div class="reservation-field">
+                <label for="start-date">Start Date</label>
+                <input type="date" id="start-date">
+            </div>
+
+            <div class="reservation-field">
+                <label for="start-time">Start Time</label>
+                <select id="start-time">
+                    <option value="">Select time</option>
+                </select>
+            </div>
+
+            <div class="reservation-field">
+                <label for="end-date">End Date</label>
+                <input type="date" id="end-date">
+            </div>
+
+            <div class="reservation-field">
+                <label for="end-time">End Time</label>
+                <select id="end-time">
+                    <option value="">Select time</option>
+                </select>
+            </div>
+
+            <button id="submit-reservation">
+                Submit Reservation
+            </button>
+
+        </div>
+
+
+        <div id="problem-form" class="problem-form">
+
+            <h2>Report Equipment Problem</h2>
+
+            <p id="problem-equipment"></p>
+
+            <div class="problem-field">
+                <label for="problem-description">
+                    Describe the problem
+                </label>
+
+                <textarea
+                    id="problem-description"
+                    rows="4"
+                    placeholder="Describe what is wrong with the equipment..."
+                ></textarea>
+            </div>
+
+            <button id="submit-problem">
+                Submit Problem Report
+            </button>
+
+        </div>
+
+
+        <h2>My Reservations</h2>
+
+        <div id="reservation-list">
+            <p>No reservations yet.</p>
+        </div>
+
+        <h2>Maintenance Issues</h2>
+
+        <div id="maintenance-list">
+            <p>No maintenance issues.</p>
+        </div>
+
+    </main>
+
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
